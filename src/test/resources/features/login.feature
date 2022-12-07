@@ -4,6 +4,7 @@ Feature: User logins to Blackboard
     Given user is on the Blackboard login page
     Given user passes "yakupalit96" username and password "Sonradedimki1." and clicks on login
     Given user succesfully lands on Blackboard homepage
+    Given user clicks on "My Grade" tool
 
 
 

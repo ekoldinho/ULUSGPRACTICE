@@ -7,7 +7,8 @@ Feature: Zedat Portal Grade
     Given user passes "yakupalit96" username and password "Sonradedimki1." and clicks on login
     Given user succesfully lands on Blackboard homepage
 
+
   Scenario: See your latest grade
 
-    Given user is sleeping
+    Given user clicks on "My Grades" tool
     Then user is sleeping

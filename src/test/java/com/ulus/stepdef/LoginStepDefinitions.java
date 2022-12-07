@@ -39,4 +39,10 @@ loginPage.anmelden.click();
 
         System.out.println("daskasıhdalsıfhaslıfhsaoıfgh");
     }
+
+    @Given("user clicks on {string} tool")
+    public void userClicksOnTool(String arg0) {
+
+        loginPage.clickOnToolBasedOnString(arg0);
+    }
 }
