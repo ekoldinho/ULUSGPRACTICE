@@ -4,6 +4,7 @@ import com.ulus.pages.LoginPage;
 import com.ulus.utilities.ConfigurationReader;
 import com.ulus.utilities.Driver;
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class LoginStepDefinitions {
@@ -31,7 +32,8 @@ loginPage.anmelden.click();
     @Given("user succesfully lands on Blackboard homepage")
     public void userSuccesfullyLandsOnBlackboardHomepage() {
 
-        System.out.println("asdasdasdasdasd");
+        String titleOfThePage = Driver.getDriver().getTitle();
+        Assert.assertTrue(titleOfThePage.contains("Blackboard Learn"));
     }
 
     @Given("user is sleeping")
