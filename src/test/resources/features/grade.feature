@@ -11,5 +11,4 @@ Feature: Zedat Portal Grade
   Scenario: See your latest grade
 
     Given user clicks on "My Grades" tool
-    And user clicks on Last Graded link
-    Then user sees his last grade and lecture name
+    Then user takes a ss for grades
