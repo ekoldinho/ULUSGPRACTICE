@@ -4,7 +4,6 @@ import com.ulus.pages.CalendarPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 
 public class CalendarStepDefs {
 
@@ -30,10 +29,10 @@ public class CalendarStepDefs {
     }
 
     @Then("user verifies new event {string} created")
-    public void userVerifiesNewEventCreated(String arg0) {
+    public void userVerifiesNewEventCreated(String xmas) {
 
         String actualResult = calendarPage.contains.getText();
-        String expectedResult = arg0;
+        String expectedResult = xmas;
 
         Assert.assertEquals(expectedResult,actualResult);
 
