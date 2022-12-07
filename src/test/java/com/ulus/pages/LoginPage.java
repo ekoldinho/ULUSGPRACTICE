@@ -33,10 +33,18 @@ public class LoginPage {
     public WebElement MyGrades;
 
     public void clickOnToolBasedOnString(String ToolName){
-
         Driver.getDriver().findElement(By.xpath("//*[contains(text(),"+ "'" + ToolName + "'" +  ")]")).click();
-
     }
+
+    @FindBy(xpath = "//*[@id=\"filter_by_mygrades\"]/li[2]/a")
+    public WebElement LastGraded;
+
+    @FindBy(xpath = "(//div[@class='grade-value'])[1]")
+    public WebElement LastGradeValue;
+
+    @FindBy(xpath = "(//span[@class='stream_area_name'])[1]")
+    public WebElement LastGradeLecture;
+
 
 
 

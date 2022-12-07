@@ -11,4 +11,5 @@ Feature: Zedat Portal Grade
   Scenario: See your latest grade
 
     Given user clicks on "My Grades" tool
-    Then user is sleeping
+    And user clicks on Last Graded link
+    Then user sees his last grade and lecture name

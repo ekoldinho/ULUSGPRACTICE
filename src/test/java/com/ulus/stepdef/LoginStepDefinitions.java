@@ -3,8 +3,13 @@ package com.ulus.stepdef;
 import com.ulus.pages.LoginPage;
 import com.ulus.utilities.ConfigurationReader;
 import com.ulus.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginStepDefinitions {
 
@@ -22,9 +27,6 @@ Driver.getDriver().findElement(By.xpath("//*[@id=\"buttonLoginShibboleth\"]")).c
 loginPage.username.sendKeys(arg0);
 loginPage.password.sendKeys(arg1);
 loginPage.anmelden.click();
-
-
-
 
     }
 
@@ -44,5 +46,16 @@ loginPage.anmelden.click();
     public void userClicksOnTool(String arg0) {
 
         loginPage.clickOnToolBasedOnString(arg0);
+    }
+
+    @And("user clicks on Last Graded link")
+    public void userClicksOnLastGradedLink() {
+      loginPage.LastGraded.click();
+    }
+
+
+    @Then("user sees his last grade and lecture name")
+    public void userSeesHisHerLastGradeAndLectureName() {
+        System.out.println("LAST GRADED"+loginPage.LastGradeValue.getText() + " " + loginPage.LastGradeLecture.getText());
     }
 }
