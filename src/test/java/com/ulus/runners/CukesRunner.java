@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "com/ulus/stepdef",
         dryRun = false,
         stepNotifications = true,
-        tags = "@asimwip"
+        tags = ""
 )
 
 
