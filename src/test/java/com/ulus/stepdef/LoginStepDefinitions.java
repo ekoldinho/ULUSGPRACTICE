@@ -6,10 +6,14 @@ import com.ulus.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 public class LoginStepDefinitions {
 
@@ -32,8 +36,7 @@ loginPage.anmelden.click();
 
     @Given("user succesfully lands on Blackboard homepage")
     public void userSuccesfullyLandsOnBlackboardHomepage() {
-
-        System.out.println("asdasdasdasdasd");
+        System.out.println("User is on Blackboard :)");
     }
 
     @Given("user is sleeping")
@@ -49,13 +52,17 @@ loginPage.anmelden.click();
     }
 
     @And("user clicks on Last Graded link")
-    public void userClicksOnLastGradedLink() {
-      loginPage.LastGraded.click();
+    public void userClicksOnLastGradedLink() throws InterruptedException {
+
+    loginPage.LastGraded.click();
     }
 
 
-    @Then("user sees his last grade and lecture name")
-    public void userSeesHisHerLastGradeAndLectureName() {
-        System.out.println("LAST GRADED"+loginPage.LastGradeValue.getText() + " " + loginPage.LastGradeLecture.getText());
+    @Then("user takes a ss for grades")
+    public void userSeesHisHerLastGradeAndLectureName() throws IOException, InterruptedException {
+        Thread.sleep(5000);
+        File scrFile = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.FILE);
+// Now you can do whatever you need to do with it, for example copy somewhere
+        FileUtils.copyFile(scrFile, new File("C:\\Users\\Yakup Alihan Tamgüç\\Desktop\\masasüstü\\Grades.png"));
     }
 }

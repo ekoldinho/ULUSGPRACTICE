@@ -36,10 +36,10 @@ public class LoginPage {
         Driver.getDriver().findElement(By.xpath("//*[contains(text(),"+ "'" + ToolName + "'" +  ")]")).click();
     }
 
-    @FindBy(xpath = "//*[@id=\"filter_by_mygrades\"]/li[2]/a")
+    @FindBy(xpath = "//*[@id=\"lbl_\"]")
     public WebElement LastGraded;
 
-    @FindBy(xpath = "(//div[@class='grade-value'])[1]")
+    @FindBy(xpath = "//*[@id=\"579291\"]/div[3]/span[1]")
     public WebElement LastGradeValue;
 
     @FindBy(xpath = "(//span[@class='stream_area_name'])[1]")
